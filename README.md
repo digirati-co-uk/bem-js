@@ -6,7 +6,7 @@
 
 Installation:
 ```
-$ yarn add bem-js
+$ yarn add digirati-bem-js
 ```
 
 Usage:

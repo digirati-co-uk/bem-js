@@ -1,7 +1,7 @@
 {
-  "name": "bem-js",
+  "name": "digirati-bem-js",
   "version": "1.0.0",
-  "description": "Describe bem-js here",
+  "description": "BEM helper for generating CSS class names",
   "main": "lib/index.js",
   "files": [
     "es",
@@ -15,13 +15,12 @@
     "test:coverage": "nwb test --coverage",
     "test:watch": "nwb test --server"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "nwb": "0.15.x"
   },
-  "author": "",
-  "homepage": "",
+  "author": "Stephen Fraser <stephen.fraser@digirati.com>",
+  "homepage": "https://github.com/digirati-co-uk/bem-js",
   "license": "MIT",
-  "repository": ""
+  "repository": "https://github.com/digirati-co-uk/bem-js"
 }
