@@ -1,8 +1,6 @@
 # bem-js
 
-[![Travis][build-badge]][build]
 [![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
 
 Installation:
 ```
@@ -11,7 +9,7 @@ $ yarn add digirati-bem-js
 
 Usage:
 ```javascript
-import BEM from 'bem-js';
+import BEM from 'digirati-bem-js';
 
 // Chaining
 BEM.block('foo'); // foo
@@ -44,11 +42,6 @@ BEM.b('foo').e('bar').m({
 }); // foo__bar foo__bar--baz-1 foo__bar--baz-3
 ```
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
+[npm-badge]: https://img.shields.io/npm/v/digirati-bem-js.png?style=flat-square
+[npm]: https://www.npmjs.org/package/digirati-bem-js
 
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
-
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
