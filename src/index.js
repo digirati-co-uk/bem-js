@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2017-present, Digirati Limited.
+ * All rights reserved.
+ */
+
 const BEM = {
   block: (b) => {
     const modifier = function (m, c) {
