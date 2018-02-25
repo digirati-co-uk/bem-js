@@ -3,40 +3,56 @@
  * All rights reserved.
  */
 
+class Element {
+  constructor(name) {
+    this.name = name;
+  }
+
+  modifier(m, c) {
+    if (m.toString() === '[object Object]') return this.ms(m);
+    if (!c && c !== undefined) {
+      return this.name;
+    }
+    return `${this.name} ${this.name}--${m}`;
+  }
+
+  m(m, c) {
+    this.modifier(m, c);
+  }
+
+  modifiers(m, join = true) {
+    let ms = [this.name];
+    for (let k in m) {
+      if (m.hasOwnProperty(k) && m[k]) {
+        ms.push(`${this.name}--${k}`);
+      }
+    }
+    return join ? ms.join(' ') : ms;
+  }
+
+  ms(m, join) {
+    this.modifiers(m, join);
+  }
+
+  toString() {
+    return this.name;
+  }
+}
+
+class Block extends Element {
+  element(name) {
+    return new Element(`${this.name}__${name}`);
+  }
+  e = this.element;
+}
+
 const BEM = {
-  block: (b) => {
-    const modifier = function (m, c) {
-      if (m.toString() === '[object Object]') return this.ms(m);
-      if (!c && c !== undefined) {
-        return this;
-      }
-      return `${this} ${this}--${m}`;
-    };
-    const modifiers = function (m, join = true) {
-      let ms = [this];
-      for (let k in m) {
-        if (m.hasOwnProperty(k) && m[k]) {
-          ms.push(`${this}--${k}`);
-        }
-      }
-      return join ? ms.join(' ') : ms;
-    };
-    // Block.Element
-    b.__proto__.e = b.__proto__.element = function (e) {
-      const be = `${this}__${e}`;
-      // Block.Element.Modifier
-      be.__proto__.m = be.__proto__.modifier = modifier;
-      be.__proto__.ms = be.__proto__.modifiers = modifiers;
-      return be;
-    };
-    // Block.Modifier
-    b.__proto__.m = b.__proto__.modifier = modifier;
-    // Block.Modifier
-    b.__proto__.ms = b.__proto__.modifiers = modifiers;
+  block: blockName => {
     // Block.
-    return b;
+    return new Block(blockName);
   },
 };
+
 BEM.b = BEM.block;
 
 export default BEM;
