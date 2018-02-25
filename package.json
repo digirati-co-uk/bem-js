@@ -1,5 +1,5 @@
 {
-  "name": "digirati-bem-js",
+  "name": "@fesk/bem-js",
   "version": "1.0.1",
   "description": "BEM helper for generating CSS class names",
   "main": "lib/index.js",
