@@ -12,6 +12,7 @@
     "build": "nwb build-web-module",
     "clean": "nwb clean-module",
     "test": "nwb test",
+    "prepublish": "nwb build-web-module",
     "test:coverage": "nwb test --coverage",
     "test:watch": "nwb test --server"
   },
